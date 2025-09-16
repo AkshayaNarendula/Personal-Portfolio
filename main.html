@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/cbda4b5d11.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="Images\LOGO.png" class="logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Student.</p>
+
+            <h1>Hi, I Am <span>Akshaya</span><br><h2>From GNITS.</h2></h1>
+        </div>
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row"> 
+            <div class="about-col-1">
+                <img src="Images\pic1.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me.</h1>
+                <p class="about">I Am Akshaya,a dedicated student passionate about problem-solving and effective teamwork. 
+                    I excel in communicating and thrive in collaborative environments, contributing positively to group dynamics. 
+                    My core focus is data science, and I also have a keen interest in HTML and CSS. I actively participate in hackathons,
+                    leveraging these skills to develop innovative solutions and drive meaningful change."</p>
+                   <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                   </div>
+                   <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Development</span><br>Can develop web with HTML and CSS.</li>
+                        <li><span>Python</span><br>Can Develop GUI Interfaces using Python.</li>
+                        <li><span>DBMS</span><br>Skilled in MySQL database management.</li>
+                    </ul>
+                   </div>
+                   <div class="tab-contents" id="projects">
+                    <ul>
+                        
+                            <li>
+                                <span>Brain Tumor Detection with MobileNetV2</span><br>
+                                Developed a brain tumor detection system using MRI scans and patient data, deployed via a Flask web interface.<br>
+                            Tools: Python, TensorFlow/Keras, Flask, HTML, CSS<br>
+                            Models: CNN (MobileNetV2) for MRI images (96.5% accuracy), Logistic Regression for text (95.3% accuracy).
+                            </li><br>
+                            <li>
+                                <span>Personal Portfolio Website</span><br>
+                                Built a responsive portfolio with smooth navigation and a Google Sheets-integrated contact form.<br>
+                                Tools: HTML, CSS, JavaScript, Visual Studio Code.
+                            </li><br>
+                            <li>
+                                <span>CostCliq: Price Comparison Web App</span><br>
+                                Developed a price comparison website with search functionality and user feedback integration.<br>
+                                Tools: HTML, CSS, JavaScript, Visual Studio Code.
+                            </li><br>
+                    
+                    </ul>
+                   </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>B.Tech</span><br>Currently pursuing a BTech in CSE with a specialization in Data Science with a CGPA of 8.51.</li>
+                        <li><span>Intermediate</span><br>Scored 96.5% in Intermediate from Narayana Junior College.</li>
+                        <li><span>10th Standard</span><br>Achieved 84.6% in CBSE from Carmel Convent High School.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>Can develop web applications using HTML and CSS(basic).</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>DBMS</h2>
+                <p>Can create Databases in Query Language like MySQL.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>akshayanarendula2005@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 9949943154</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <a href="#" class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Akshaya Narendula</p>
+    </div>
+</div>
+<script>
+
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwj8xPHByFUc0cwhkZo6EXBtgk7_-BVLm6WAZSMBK00x__QPUBAOHF85DuEzbkEgXU7/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message Sent successfully."
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
